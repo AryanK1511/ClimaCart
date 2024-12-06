@@ -39,6 +39,11 @@ app.get('/', (req, res) => {
     res.json(db);
 });
 
+app.post('/', (req, res) => {
+    addValue(req.body.value);
+    res.json({ message: 'Value added' });
+});
+
 app.listen(3000, () => {
     console.log('Server running on port 3000');
 });
